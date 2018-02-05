@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RPG Site</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+      <script>   
+          jQuery('body').css('display', 'none');
+          jQuery(document).ready(function(){
+                jQuery('body').fadeIn();
+                jQuery('a').on('click',function(event){
+                    var thetarget = this.getAttribute('target')
+                    if(thetarget != "_blank"){
+                        var thehref = this.getAttribute('href')
+                        event.preventDefault();
+                        jQuery('body').fadeOut(function(){
+                            window.location = thehref
+                        });
+                    }
+                });
+          });
+          setTimeout(function(){
+            jQuery('body').fadeIn()
+          },1000)
+      </script>
+
+    <style>
+
+    	body{
+    		background-color: #30343F;
+    	}
+
+    	h1{
+    		font-family: 'Quicksand', sans-serif;
+    		color: #E2E2E2;
+    		font-size: 50px;
+    	}
+
+    	#title{
+    		position: relative;
+    		left: 1vw;
+    		top: 2vh;
+    	}
+
+    	#list{
+    		position: relative;
+    		left: 10vw;
+    		top: 5vh;
+    		font-size: 25px;
+    		color: #E2E2E2;;
+    	}
+
+    </style>
+
+    <div class='container-fluid'>
+    	<div id='title'>
+    		<h1>RPG Game</h1>
+    	</div>
+    	<div id='list'>
+    		<ul style="list-style-type:circle">
+    			<li><a href='https://youtube.com' target='_blank'>Build-5/2/17</a></li>
+    		</ul>
+    	</div>
+    </div>
+
+ </body>
+
+</html>
