@@ -64,6 +64,12 @@
     		font-size: 25px;
     	}
 
+    	h4{
+    		font-family: 'Quicksand', sans-serif;
+    		color: #E2E2E2;
+    		font-size: 20px;
+    	}
+
     	#title{
     		position: relative;
     		right: 2vw;
@@ -97,6 +103,21 @@
     		left: 2vw;
     	}
 
+    	#add{
+    		display: inline-block;
+    		font-size: 12px;
+    		background-color: #6e7271;
+    		color:#acad94;
+    		border: none;
+    		margin-left: 15px;
+    	}
+    	#input{
+    		display: inline-block;
+    	}
+
+    	#addModal{
+    	}
+
     </style>
 
     <div class='container-fluid'>
@@ -118,9 +139,9 @@
     	<br>
     	<br>
     	<div id='list'>
-    		<h2>Builds</h2>
+    		<h2>Builds <button type='button' data-toggle="modal" data-target="#addModal" id='add'>Add</button></h2>	
     		<br>
-    		<ul style="list-style-type:circle">
+    		<ul style="list-style-type:circle" id='buildList'>
     			<li><a href='RPG/1/index.html' target='_blank'>Build-5/2/17</a></li>
     			<li><a href='RPG/2/index.html' target='_blank'>Build-5/2/17-2.0</a></li>
     			<li><a href='RPG/2.1/index.html' target='_blank'>Build-5/2/17-2.1</a></li>
@@ -128,7 +149,38 @@
     			<li><a href='RPG/3/index.html' target='_blank'>Build-8/2/17-3</a></li>
     		</ul>
     	</div>
+    	<div id="addModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title">Add Build</h2>
+      </div>
+      <div class="modal-body">
+        <h4>Build Name:</h4>
+        <input id='buildName' class='input'>
+        <br><br>
+        <h4>Build Location:</h4>
+        <input id='buildLocation' class='input'>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-default" id='submitButton' onclick="submit();"">Submit</button>
+      </div>
     </div>
+
+  </div>
+</div>
+    </div>
+
+<script>
+function submit(){
+	$('#buildList').append('<li><a href= '+document.getElementById("buildLocation").value+ ' target="_blank">' + document.getElementById("buildName").value+'</a></li>');
+	$('#addModal').modal('hide');
+};
+</script>
 
  </body>
 
